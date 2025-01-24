@@ -10,6 +10,10 @@ public class DeathObstacles : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+    }
     // Update is called once per frame
     void Update()
     {

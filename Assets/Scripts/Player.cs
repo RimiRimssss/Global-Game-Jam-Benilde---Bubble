@@ -30,11 +30,11 @@ public class Player : MonoBehaviour
             if (transform.localScale.x < 1) transform.localScale = Vector3.one;
         }
 
-        if (transform.localScale.x == bubbleLimit) transform.localScale = Vector3.one;
+        if (transform.localScale.x >= bubbleLimit) transform.localScale = Vector3.one * bubbleLimit;
 
-        if (transform.localScale.x >= bubbleLimit)
+        if (transform.localScale.x == bubbleLimit)
         {
-            if (bubbleTimer >= 7)
+            if (bubbleTimer >= 150)
             {
                 Destroy(this.gameObject);
             }
