@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 68336571}
   - component: {fileID: 68336572}
   m_Layer: 0
-  m_Name: re
+  m_Name: Deads
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -202,7 +202,7 @@ Transform:
   m_GameObject: {fileID: 68336568}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.29, y: -2.1, z: 0}
+  m_LocalPosition: {x: -1.35, y: -2.24, z: 0}
   m_LocalScale: {x: 3.47, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 412170690}
   - component: {fileID: 412170689}
   m_Layer: 0
-  m_Name: re (1)
+  m_Name: Jellyhead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -326,7 +326,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.25}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &412170690
 SpriteRenderer:
@@ -499,7 +499,7 @@ GameObject:
   - component: {fileID: 1770433033}
   - component: {fileID: 1770433035}
   m_Layer: 0
-  m_Name: Circle (1)
+  m_Name: Urchin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -603,7 +603,7 @@ GameObject:
   - component: {fileID: 2013227321}
   - component: {fileID: 2013227320}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

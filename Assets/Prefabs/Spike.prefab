@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9189949806463319503}
   - component: {fileID: 3750079861185195399}
   - component: {fileID: 6981610232394921042}
-  - component: {fileID: -2155067587468651281}
+  - component: {fileID: -8387977492196512271}
   m_Layer: 0
   m_Name: Spike
   m_TagString: Spike
@@ -174,8 +174,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &-2155067587468651281
+  m_Constraints: 0
+--- !u!114 &-8387977492196512271
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
