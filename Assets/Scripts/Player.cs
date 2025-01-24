@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float scaleFactor = 1.0f;
+    [SerializeField] private float scaleFactor = 0.01f;
     [SerializeField] private float moveSpeed = 1.0f;
     [SerializeField] private float bubbleLimit = 3.0f;
+    [SerializeField] private float bubbleTimer;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Say ahhh");
+        
     }
 
     // Update is called once per frame
@@ -28,8 +29,21 @@ public class Player : MonoBehaviour
             transform.localScale -= Vector3.one * scaleFactor;
             if (transform.localScale.x < 1) transform.localScale = Vector3.one;
         }
-        if (transform.localScale.x >= bubbleLimit) Destroy(this.gameObject);
 
+        if (transform.localScale.x == bubbleLimit) transform.localScale = Vector3.one;
+
+        if (transform.localScale.x >= bubbleLimit)
+        {
+            if (bubbleTimer >= 7)
+            {
+                Destroy(this.gameObject);
+            }
+
+            else
+            {
+                bubbleTimer++;
+            }
+        }
         //Left and Right
         if (Input.GetKey(KeyCode.A))
         {
