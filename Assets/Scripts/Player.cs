@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
         {
             if (bubbleTimer >= 300)
             {
+                Debug.Log("TOO BIG BOI");
                 Destroy(this.gameObject);
             }
 
