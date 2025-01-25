@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Bubble : MonoBehaviour
 {
-    [SerializeField] private float scaleFactor = 0.01f;
-    [SerializeField] private float bubbleLimit = 3.0f;
-    [SerializeField] private float bubbleTimer;
+    [SerializeField] private float scaleFactor = 0.01f; // starting size of the bubble
+    [SerializeField] private float bubbleLimit = 3.0f; // max  size of the bubble allowed
+    [SerializeField] private float bubbleTimer; // time allowed for the bubble's max size
     private Rigidbody2D rb2d;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb2d = this.gameObject.GetComponent<Rigidbody2D>();
+        rb2d = this.gameObject.GetComponent<Rigidbody2D>(); // gets the component of the bubbles rigid body
     }
 
     void FixedUpdate()
@@ -48,15 +48,15 @@ public class Bubble : MonoBehaviour
         //    transform.localScale = Vector3.one * bubbleLimit;
         //}
 
-        if (transform.localScale.x == bubbleLimit)
+        if (transform.localScale.x == bubbleLimit) // if the max size has been reached
         {
-            if (bubbleTimer >= 120)
+            if (bubbleTimer >= 120) // if timer goes above 120
             {
                 Debug.Log("TOO BIG BOI");
                 Destroy(this.gameObject);
             }
 
-            else
+            else // increases the size and speed of the bubble
             {
                 bubbleTimer++;
                 var speed = 4f;

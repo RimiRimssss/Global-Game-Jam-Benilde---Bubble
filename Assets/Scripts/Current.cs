@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Current : MonoBehaviour
 {
-    public enum Directions
+    public enum Directions // possible directions for the sea current
     {
         Left,
         Right,
@@ -12,7 +12,7 @@ public class Current : MonoBehaviour
         Down
     }
 
-    [SerializeField] private float currentForce = 0.5f;
+    [SerializeField] private float currentForce = 0.5f; // current speed
 
     public Directions directions;
 

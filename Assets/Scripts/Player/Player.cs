@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    #region Player References
+    /// <summary>
+    /// where the references will be inserted
+    /// </summary>
     [SerializeField] private float moveSpeed = 3.0f;
     [SerializeField] private GameObject bubble;
     private Rigidbody2D rb2d;
@@ -12,6 +16,7 @@ public class Player : MonoBehaviour
     public AudioSource playerInhaleAnim;
     public AudioSource playerExhaleAnim;
     public AudioSource playerDeathAnim;
+    #endregion
 
     private bool isInhaling;
     private bool isExhaling;
@@ -25,13 +30,17 @@ public class Player : MonoBehaviour
         isExhaling = false;
     }
 
-    // Update is called once per frame
+    #region Player and Bubble Physics Changes
+
+    /// <summary>
+    /// Changes that happened to the player and the bubble's physics at a certain time
+    /// </summary>
     void FixedUpdate()
     {
         //Expanding Bubble
         if (Input.GetKey(KeyCode.Space) && bubble.gameObject.activeInHierarchy == true)
         {
-            if (!isInhaling)
+            if (!isInhaling) // condition that allows the inhale audio to play
             {
                 playerInhaleAnim.Play();
                 isInhaling = true;
@@ -41,7 +50,7 @@ public class Player : MonoBehaviour
         }
         else if (!Input.GetKey(KeyCode.Space) || bubble.gameObject.activeInHierarchy == false)
         {
-            if (!isExhaling)
+            if (!isExhaling) // condition that allows the exhale audio to play
             {
                 playerExhaleAnim.Play();
                 isExhaling = true;
@@ -51,7 +60,7 @@ public class Player : MonoBehaviour
         }
 
 
-        //Left and Right
+        // Left and Right movement
         if (Input.GetKey(KeyCode.A))
         {
             transform.position += Vector3.left * Time.deltaTime * moveSpeed;
@@ -61,7 +70,13 @@ public class Player : MonoBehaviour
             transform.position += Vector3.right * Time.deltaTime * moveSpeed;
         }
     }
+    #endregion
 
+    #region Player Death Condition
+    /// <summary>
+    /// conditions needed to know to make the player die
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Spike"))
@@ -73,6 +88,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Spike"))
             this.gameObject.SetActive(false);
     }
+    #endregion
 
     public void RegainBubble()
     {
