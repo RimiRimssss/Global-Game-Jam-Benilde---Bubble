@@ -27,7 +27,7 @@ public class Bubble : MonoBehaviour
         else if (Input.GetKey(KeyCode.Space) == false)
         {
             transform.localPosition = Vector3.zero;
-            transform.localScale -= Vector3.one * scaleFactor;
+            transform.localScale -= Vector3.one * scaleFactor / 2;
             //rb2d.gravityScale = 1.0f;
 
             bubbleTimer = 0;
@@ -51,12 +51,12 @@ public class Bubble : MonoBehaviour
             else
             {
                 bubbleTimer++;
-                var speed = 5f;
-                var intensity = 0.5f;
+                var speed = 4f;
+                var intensity = 0.2f;
 
                 transform.localPosition = intensity * new Vector3(
                     Mathf.PerlinNoise(speed * Time.time, 1),
-                    Mathf.PerlinNoise(speed * Time.time, 2),
+                    Mathf.PerlinNoise(speed * Time.time, -1),
                     Mathf.PerlinNoise(speed * Time.time, 3));
             }
         }
