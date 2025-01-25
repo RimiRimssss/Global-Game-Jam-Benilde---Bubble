@@ -18,12 +18,12 @@ public class Player : MonoBehaviour
     void FixedUpdate()
     {
         //Expanding Bubble
-        if (Input.GetKey(KeyCode.Space) && bubble != null)
+        if (Input.GetKey(KeyCode.Space) && bubble.gameObject.activeInHierarchy == true)
         {
             rb2d.gravityScale = -bubble.transform.localScale.x / 1.5f;
             //rb2d.gravityScale += -0.1f;
         }
-        else if (Input.GetKey(KeyCode.Space) == false || bubble == null)
+        else if (Input.GetKey(KeyCode.Space) == false || bubble.gameObject.activeInHierarchy == false)
         {
             rb2d.gravityScale = 1.0f;
         }
@@ -51,6 +51,15 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Spike"))
             this.gameObject.SetActive(false);
     }
+
+    public void RegainBubble()
+    {
+        if(bubble.gameObject.activeInHierarchy == false)
+        {
+            bubble.gameObject.SetActive(true);
+        }
+    }
+
     //private void OnDisable()
     //{
 

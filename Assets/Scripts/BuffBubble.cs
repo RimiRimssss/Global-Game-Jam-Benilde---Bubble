@@ -11,5 +11,12 @@ public class BuffBubble : MonoBehaviour
             collision.gameObject.transform.localScale += Vector3.one;
             Destroy(this.gameObject);
         }
+
+        if (collision.gameObject.GetComponent<Player>())
+        {
+            Player player = collision.gameObject.GetComponent<Player>();
+
+            player.RegainBubble();
+        }
     }
 }
