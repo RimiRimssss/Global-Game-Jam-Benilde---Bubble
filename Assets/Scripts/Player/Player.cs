@@ -8,10 +8,21 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject bubble;
     private Rigidbody2D rb2d;
 
+    [Header("SFX")]
+    public AudioSource playerInhaleAnim;
+    public AudioSource playerExhaleAnim;
+    public AudioSource playerDeathAnim;
+
+    private bool isInhaling;
+    private bool isExhaling;
+
     // Start is called before the first frame update
     void Start()
     {
         rb2d = this.gameObject.GetComponent<Rigidbody2D>();
+
+        isInhaling = false;
+        isExhaling = false;
     }
 
     // Update is called once per frame
@@ -20,11 +31,22 @@ public class Player : MonoBehaviour
         //Expanding Bubble
         if (Input.GetKey(KeyCode.Space) && bubble.gameObject.activeInHierarchy == true)
         {
+            if (!isInhaling)
+            {
+                playerInhaleAnim.Play();
+                isInhaling = true;
+                isExhaling = false;
+            }
             rb2d.gravityScale = -bubble.transform.localScale.x / 1.5f;
-            //rb2d.gravityScale += -0.1f;
         }
-        else if (Input.GetKey(KeyCode.Space) == false || bubble.gameObject.activeInHierarchy == false)
+        else if (!Input.GetKey(KeyCode.Space) || bubble.gameObject.activeInHierarchy == false)
         {
+            if (!isExhaling)
+            {
+                playerExhaleAnim.Play();
+                isExhaling = true;
+                isInhaling = false;
+            }
             rb2d.gravityScale = 1.0f;
         }
 
