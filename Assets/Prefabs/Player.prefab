@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3372157259934843600}
   - component: {fileID: 3568285446477078695}
-  - component: {fileID: 8219022350075147412}
   - component: {fileID: 6944651464486579269}
   - component: {fileID: 7041142021106351338}
   - component: {fileID: 3981727517099904765}
@@ -88,23 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8219022350075147412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 188248323233776288}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dc97f1d57868de42b0784fcdf3cb45b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scaleFactor: 0.01
-  moveSpeed: 3
-  bubbleLimit: 3
-  bubbleTimer: 0
-  bubble: {fileID: 0}
 --- !u!114 &6944651464486579269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0cad9a4b25d5e245b1c1bd00ba06a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleFactor: 0.01
-  bubbleLimit: 2
+  scaleFactor: 0.05
+  bubbleLimit: 2.5
   bubbleTimer: 0
 --- !u!50 &7041142021106351338
 Rigidbody2D:
@@ -209,7 +191,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3286179861471644879}
@@ -280,7 +262,7 @@ GameObject:
   - component: {fileID: 4186758536771737887}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -293,7 +275,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4485973071509122954}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -314,10 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dc97f1d57868de42b0784fcdf3cb45b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleFactor: 0.01
   moveSpeed: 3
-  bubbleLimit: 3
-  bubbleTimer: 0
   bubble: {fileID: 188248323233776288}
 --- !u!50 &143805876151692138
 Rigidbody2D:
@@ -332,7 +311,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 10
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
