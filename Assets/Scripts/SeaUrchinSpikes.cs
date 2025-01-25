@@ -97,13 +97,6 @@ public class SpikeBehavior : MonoBehaviour
         // Destroy the spike if it collides with anything other than the parent or other spikes
         if (collision.gameObject != parentGameObject && !collision.gameObject.CompareTag("Spike"))
         {
-            // Check if the collision object has the "Player" tag
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                // Destroy the player if it collides with the spike
-                Destroy(collision.gameObject);
-            }
-
             // Destroy the spike itself
             Destroy(gameObject);
         }
