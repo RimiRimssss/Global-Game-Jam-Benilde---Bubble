@@ -20,7 +20,15 @@ public class Bubble : MonoBehaviour
         //Expanding Bubble
         if (Input.GetKey(KeyCode.Space))
         {
-            transform.localScale += Vector3.one * scaleFactor;
+            if (transform.localScale.x >= bubbleLimit)
+            {
+                transform.localScale += Vector3.zero;
+                transform.localScale -= Vector3.one * scaleFactor / 2;
+            }
+            else
+            {
+                transform.localScale += Vector3.one * scaleFactor;
+            }
             //rb2d.gravityScale = -1.0f;
             //rb2d.gravityScale += -0.1f;
         }
@@ -35,10 +43,10 @@ public class Bubble : MonoBehaviour
             if (transform.localScale.x < 1) transform.localScale = Vector3.one;
         }
 
-        if (transform.localScale.x >= bubbleLimit)
-        {
-            transform.localScale = Vector3.one * bubbleLimit;
-        }
+        //if (transform.localScale.x >= bubbleLimit)
+        //{
+        //    transform.localScale = Vector3.one * bubbleLimit;
+        //}
 
         if (transform.localScale.x == bubbleLimit)
         {
@@ -60,5 +68,11 @@ public class Bubble : MonoBehaviour
                     Mathf.PerlinNoise(speed * Time.time, 3));
             }
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Spike"))
+            this.gameObject.SetActive(false);
     }
 }
