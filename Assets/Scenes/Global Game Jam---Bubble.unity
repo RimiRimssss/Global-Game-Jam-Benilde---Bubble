@@ -217,11 +217,37 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
+--- !u!1 &235913425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 441451943529302113, guid: 1ebb989fb1eb1f94faa7e4bddfb59656, type: 3}
+  m_PrefabInstance: {fileID: 2843359311262829877}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &235913427 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5755452715812701381, guid: 1ebb989fb1eb1f94faa7e4bddfb59656, type: 3}
   m_PrefabInstance: {fileID: 2843359311262829877}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &235913428
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235913425}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed6a15994e5a32d43ae7873cb2777f2f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &282716915
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad5d9939ff2e7546b9ebc345a317c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDisableDelay: 1
 --- !u!50 &282716920
 Rigidbody2D:
   serializedVersion: 4
@@ -632,6 +659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad5d9939ff2e7546b9ebc345a317c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDisableDelay: 1
 --- !u!50 &402890852
 Rigidbody2D:
   serializedVersion: 4
@@ -803,6 +831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad5d9939ff2e7546b9ebc345a317c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDisableDelay: 1
 --- !u!50 &537668544
 Rigidbody2D:
   serializedVersion: 4
@@ -974,6 +1003,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad5d9939ff2e7546b9ebc345a317c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDisableDelay: 1
 --- !u!50 &685487878
 Rigidbody2D:
   serializedVersion: 4
@@ -1303,6 +1333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad5d9939ff2e7546b9ebc345a317c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDisableDelay: 1
 --- !u!50 &1427829513
 Rigidbody2D:
   serializedVersion: 4
@@ -1547,6 +1578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cad5d9939ff2e7546b9ebc345a317c7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDisableDelay: 1
 --- !u!50 &1625503109
 Rigidbody2D:
   serializedVersion: 4
@@ -1794,10 +1826,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6046018698915456164, guid: 1ebb989fb1eb1f94faa7e4bddfb59656, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f1828d0112a0cdc498b56207d382eb04, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 441451943529302113, guid: 1ebb989fb1eb1f94faa7e4bddfb59656, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 235913428}
   m_SourcePrefab: {fileID: 100100000, guid: 1ebb989fb1eb1f94faa7e4bddfb59656, type: 3}
 --- !u!1001 &4767774751631549491
 PrefabInstance:
