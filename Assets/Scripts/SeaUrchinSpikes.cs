@@ -19,12 +19,31 @@ public class SeaUrchinSpikes : MonoBehaviour
     [SerializeField]
     private float fireInterval = 5f; // Time between automatic firing
 
+    [SerializeField]
+    private Transform player; // Reference to the player's Transform
+
+    [SerializeField]
+    private float triggerDistance = 7f; // Distance at which shooting starts
+
     private Transform parentTransform; // The parent object's transform
+    private bool isShooting = false; // Whether the shooter has started firing
 
     void Start()
     {
         parentTransform = transform; // Store the parent object's transform
-        InvokeRepeating(nameof(SpawnProjectiles), 0f, fireInterval); // Start automatic firing
+    }
+
+    void Update()
+    {
+        // Check the distance between the shooter and the player
+        float distanceToPlayer = Vector2.Distance(parentTransform.position, player.position);
+
+        // Start shooting if the player is within the trigger distance
+        if (!isShooting && distanceToPlayer <= triggerDistance)
+        {
+            isShooting = true;
+            InvokeRepeating(nameof(SpawnProjectiles), 0f, fireInterval);
+        }
     }
 
     private void SpawnProjectiles()
@@ -69,6 +88,14 @@ public class SpikeBehavior : MonoBehaviour
         // Destroy the spike if it collides with anything other than the parent or other spikes
         if (collision.gameObject != parentGameObject && !collision.gameObject.CompareTag("Spike"))
         {
+            // Check if the collision object has the "Player" tag
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                // Destroy the player if it collides with the spike
+                Destroy(collision.gameObject);
+            }
+
+            // Destroy the spike itself
             Destroy(gameObject);
         }
     }

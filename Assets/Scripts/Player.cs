@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float scaleFactor = 0.001f;
+    [SerializeField] private float scaleFactor = 0.01f;
     [SerializeField] private float moveSpeed = 3.0f;
     [SerializeField] private float bubbleLimit = 3.0f;
     [SerializeField] private float bubbleTimer;
