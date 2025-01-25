@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Bubble : MonoBehaviour
 {
     [SerializeField] private float scaleFactor = 0.01f;
-    [SerializeField] private float moveSpeed = 3.0f;
     [SerializeField] private float bubbleLimit = 3.0f;
     [SerializeField] private float bubbleTimer;
     private Rigidbody2D rb2d;
@@ -16,35 +15,34 @@ public class Player : MonoBehaviour
         rb2d = this.gameObject.GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-
         //Expanding Bubble
         if (Input.GetKey(KeyCode.Space))
         {
             transform.localScale += Vector3.one * scaleFactor;
-            rb2d.gravityScale = -1.0f;
-            rb2d.gravityScale += -0.05f;
+            //rb2d.gravityScale = -1.0f;
+            //rb2d.gravityScale += -0.1f;
         }
         else if (Input.GetKey(KeyCode.Space) == false)
         {
+            transform.localPosition = Vector3.zero;
             transform.localScale -= Vector3.one * scaleFactor;
-            rb2d.gravityScale = 1.0f;
+            //rb2d.gravityScale = 1.0f;
 
             bubbleTimer = 0;
 
             if (transform.localScale.x < 1) transform.localScale = Vector3.one;
         }
 
-        if (transform.localScale.x >= bubbleLimit) 
+        if (transform.localScale.x >= bubbleLimit)
         {
             transform.localScale = Vector3.one * bubbleLimit;
         }
 
         if (transform.localScale.x == bubbleLimit)
         {
-            if (bubbleTimer >= 300)
+            if (bubbleTimer >= 120)
             {
                 Debug.Log("TOO BIG BOI");
                 Destroy(this.gameObject);
@@ -53,16 +51,14 @@ public class Player : MonoBehaviour
             else
             {
                 bubbleTimer++;
+                var speed = 5f;
+                var intensity = 0.5f;
+
+                transform.localPosition = intensity * new Vector3(
+                    Mathf.PerlinNoise(speed * Time.time, 1),
+                    Mathf.PerlinNoise(speed * Time.time, 2),
+                    Mathf.PerlinNoise(speed * Time.time, 3));
             }
-        }
-        //Left and Right
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position += Vector3.left * Time.deltaTime * moveSpeed;
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += Vector3.right * Time.deltaTime * moveSpeed;
         }
     }
 }
