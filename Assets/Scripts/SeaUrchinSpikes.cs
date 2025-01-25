@@ -25,8 +25,11 @@ public class SeaUrchinSpikes : MonoBehaviour
     [SerializeField]
     private float triggerDistance = 7f; // Distance at which shooting starts
 
+    [SerializeField]
+    private float stopDistance = 10f; // Distance at which shooting stops
+
     private Transform parentTransform; // The parent object's transform
-    private bool isShooting = false; // Whether the shooter has started firing
+    private bool isShooting = false; // Whether the shooter is currently firing
 
     void Start()
     {
@@ -43,6 +46,12 @@ public class SeaUrchinSpikes : MonoBehaviour
         {
             isShooting = true;
             InvokeRepeating(nameof(SpawnProjectiles), 0f, fireInterval);
+        }
+        // Stop shooting if the player is farther than the stop distance
+        else if (isShooting && distanceToPlayer > stopDistance)
+        {
+            isShooting = false;
+            CancelInvoke(nameof(SpawnProjectiles));
         }
     }
 
