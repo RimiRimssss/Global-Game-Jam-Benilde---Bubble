@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject losePanel;
     public GameObject pausePanel;
 
+    [SerializeField]
     private bool isPaused = false;
 
     void Start()
@@ -43,10 +44,13 @@ public class GameManager : MonoBehaviour
     }
 
     public void PauseGame()
-    {
-        isPaused = true;
-        Time.timeScale = 0; // Freeze the game time
-        pausePanel.SetActive(true); // Show the pause panel
+    {   
+       isPaused = true;
+       Time.timeScale = 0; // Freeze the game time
+       pausePanel.SetActive(true); // Show the pause panel
+       
+    
+        
     }
 
     public void ResumeGame()

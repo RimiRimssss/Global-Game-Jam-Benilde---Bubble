@@ -6,6 +6,8 @@ public class DeathObstacles : MonoBehaviour
     [SerializeField]
     private float playerDisableDelay = 1f; // Delay before disabling the player
 
+    public GameManager gameManager; // Reference to the GameManager
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -13,6 +15,7 @@ public class DeathObstacles : MonoBehaviour
             Debug.Log("YOU HIT");
             StartCoroutine(DisablePlayerAfterDelay(collision.gameObject));
         }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -32,4 +35,5 @@ public class DeathObstacles : MonoBehaviour
         // Disable the player GameObject
         player.SetActive(false);
     }
+
 }
