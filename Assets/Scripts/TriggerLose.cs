@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefeatTrigger : MonoBehaviour
+public class TriggerLose : MonoBehaviour
 {
     public GameManager gameManager; // Reference to the GameManager
 
