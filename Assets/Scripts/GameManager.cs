@@ -5,12 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
     public GameObject victoryPanel;
     public GameObject losePanel;
     public GameObject pausePanel;
 
     [SerializeField]
     private bool isPaused = false;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
 
     void Start()
     {

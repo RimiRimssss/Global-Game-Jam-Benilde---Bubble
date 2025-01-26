@@ -4,7 +4,7 @@ using UnityEngine;
 public class DeathObstacles : MonoBehaviour
 {
     [SerializeField]
-    private float playerDisableDelay = 1f; // Delay before disabling the player
+    private float playerDisableDelay = 0f; // Delay before disabling the player
 
     public GameManager gameManager; // Reference to the GameManager
 

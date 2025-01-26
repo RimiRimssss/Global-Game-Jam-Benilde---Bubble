@@ -6,12 +6,12 @@ public class TriggerLose : MonoBehaviour
 {
     public GameManager gameManager; // Reference to the GameManager
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
+    //private void OnTriggerEnter2D(Collider2D other)
+    //{
         // Check if the player has entered the trigger
-        if (other.CompareTag("Player"))
-        {
-            gameManager.ShowLosePanel();
-        }
-    }
+       // if (other.CompareTag("Player"))
+       // {
+           // gameManager.ShowLosePanel();
+        //}
+   // }
 }

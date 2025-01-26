@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 6196649682455632839}
   - component: {fileID: 7515900233268740152}
   - component: {fileID: 6232523208677197094}
-  - component: {fileID: 1096411557986018418}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,16 +130,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.0840485, y: 0.44570804}
   m_EdgeRadius: 0
---- !u!114 &1096411557986018418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4870481965928834783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cad5d9939ff2e7546b9ebc345a317c7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerDisableDelay: 1

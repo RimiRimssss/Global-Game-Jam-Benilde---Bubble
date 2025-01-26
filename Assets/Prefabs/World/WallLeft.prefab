@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 8459810816953637909}
   - component: {fileID: 8515214806582079754}
   - component: {fileID: 5695661895697547234}
-  - component: {fileID: 7407910301707244322}
   m_Layer: 0
   m_Name: WallLeft
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,16 +130,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.36, y: 1.9300524}
   m_EdgeRadius: 0
---- !u!114 &7407910301707244322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4034735018530871128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cad5d9939ff2e7546b9ebc345a317c7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerDisableDelay: 1

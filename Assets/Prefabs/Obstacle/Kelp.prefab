@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 6977105413322809390}
   - component: {fileID: 9019029427647384871}
   - component: {fileID: 4096847470398584052}
-  - component: {fileID: 5849188396278946924}
   - component: {fileID: 9007129098993652877}
   m_Layer: 0
   m_Name: Kelp
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,19 +131,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.104416, y: 2.3380475}
   m_EdgeRadius: 0
---- !u!114 &5849188396278946924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 569812162309480536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cad5d9939ff2e7546b9ebc345a317c7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerDisableDelay: 1
 --- !u!50 &9007129098993652877
 Rigidbody2D:
   serializedVersion: 4
