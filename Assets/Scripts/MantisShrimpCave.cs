@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MantisShrimpCave : MonoBehaviour
 {
+   [SerializeField] private Animator anim;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -28,6 +30,6 @@ public class MantisShrimpCave : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
 
         // Disable the player GameObject
-        deadPlayer.SetActive(false);
+        anim.Play("MantisShrimp_Detect");
     }
 }
