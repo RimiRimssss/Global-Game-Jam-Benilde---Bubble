@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4450133702321277696}
   - component: {fileID: 5893782422727664278}
   - component: {fileID: 2817059764566960518}
-  - component: {fileID: 3754957378225718992}
   m_Layer: 0
   m_Name: UrchinSpike
   m_TagString: Spike
@@ -181,16 +180,3 @@ PolygonCollider2D:
       - {x: 0.26, y: -0.42}
       - {x: 0.28, y: -0.35}
   m_UseDelaunayMesh: 0
---- !u!114 &3754957378225718992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2539574247610265035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cad5d9939ff2e7546b9ebc345a317c7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerDisableDelay: 1

@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 5710766505780428412}
   - component: {fileID: 2520536175169407778}
   - component: {fileID: 5677856003788657160}
-  - component: {fileID: 1791193976280987340}
   - component: {fileID: 8685469429509772646}
   m_Layer: 0
   m_Name: Coral1
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,19 +131,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.435337, y: 2.4641075}
   m_EdgeRadius: 0
---- !u!114 &1791193976280987340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210992533922878258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cad5d9939ff2e7546b9ebc345a317c7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerDisableDelay: 1
 --- !u!50 &8685469429509772646
 Rigidbody2D:
   serializedVersion: 4

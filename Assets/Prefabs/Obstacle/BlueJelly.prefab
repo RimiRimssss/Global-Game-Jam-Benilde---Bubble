@@ -202,11 +202,10 @@ GameObject:
   - component: {fileID: 7357660108073765028}
   - component: {fileID: 1346158932536412697}
   - component: {fileID: 174155367661996067}
-  - component: {fileID: 4563231341681644235}
   - component: {fileID: 3620167973056134226}
   m_Layer: 0
   m_Name: BlueJellyTentacles
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -323,19 +322,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.912878, y: 1.5738857}
   m_EdgeRadius: 0
---- !u!114 &4563231341681644235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5705018818031240306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cad5d9939ff2e7546b9ebc345a317c7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerDisableDelay: 1
 --- !u!50 &3620167973056134226
 Rigidbody2D:
   serializedVersion: 4
