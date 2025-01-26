@@ -20,12 +20,12 @@ public class Player : MonoBehaviour
 
     private bool isInhaling;
     private bool isExhaling;
+    [SerializeField] private Animator playerAnim;
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = this.gameObject.GetComponent<Rigidbody2D>();
-
         isInhaling = false;
         isExhaling = false;
     }
@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
         //Expanding Bubble
         if (Input.GetKey(KeyCode.Space) && bubble.gameObject.activeInHierarchy == true)
         {
+            playerAnim.Play("MooDeng_Exhale");
             if (!isInhaling) // condition that allows the inhale audio to play
             {
                 playerInhaleAnim.Play();
@@ -50,6 +51,12 @@ public class Player : MonoBehaviour
         }
         else if (!Input.GetKey(KeyCode.Space) || bubble.gameObject.activeInHierarchy == false)
         {
+            if (bubble.gameObject.activeInHierarchy == false)
+            {
+                rb2d.gravityScale = 1.0f;
+                playerAnim.Play("MooDeng_Death");
+            }
+
             if (!isExhaling) // condition that allows the exhale audio to play
             {
                 playerExhaleAnim.Play();
@@ -57,8 +64,16 @@ public class Player : MonoBehaviour
                 isInhaling = false;
             }
             rb2d.gravityScale = 1.0f;
-        }
 
+            if (bubble.gameObject.transform.localScale.x > 1.0f && bubble.gameObject.activeInHierarchy == true)
+            {
+                playerAnim.Play("MooDeng_Inhale");
+            }
+            else if (bubble.gameObject.transform.localScale.x <= 1.0f && bubble.gameObject.activeInHierarchy == true)
+            {
+                playerAnim.Play("MooDeng_Idle");
+            }
+        }
 
         // Left and Right movement
         if (Input.GetKey(KeyCode.A))

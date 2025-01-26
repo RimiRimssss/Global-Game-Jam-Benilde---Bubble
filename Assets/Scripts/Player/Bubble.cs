@@ -48,12 +48,12 @@ public class Bubble : MonoBehaviour
         //    transform.localScale = Vector3.one * bubbleLimit;
         //}
 
-        if (transform.localScale.x == bubbleLimit) // if the max size has been reached
+        if (transform.localScale.x >= bubbleLimit) // if the max size has been reached
         {
             if (bubbleTimer >= 120) // if timer goes above 120
             {
                 Debug.Log("TOO BIG BOI");
-                Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
             }
 
             else // increases the size and speed of the bubble
